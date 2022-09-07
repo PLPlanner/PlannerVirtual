@@ -6,6 +6,11 @@ Public Class Lembrete
     Private _data As Date
     'TODO ADD ILembreteDAO
 
+    Public Sub New(ByVal descricao As String, ByVal horarioInicio As Date, ByVal data As Integer)
+        _descricao = descricao
+        _data = data
+    End Sub
+
     Public Function Getdescricao() As System.String
         Return _descricao
     End Function
