@@ -195,12 +195,6 @@
     <Compile Include="app\View\FormRelatorioProdutividade.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="app\View\FormRelatorioQuantidade.designer.vb">
-      <DependentUpon>FormRelatorioQuantidade.vb</DependentUpon>
-    </Compile>
-    <Compile Include="app\View\FormRelatorioQuantidade.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="app\View\Tarefa\FormHomeTarefas.Designer.vb">
       <DependentUpon>FormHomeTarefas.vb</DependentUpon>
     </Compile>
@@ -288,9 +282,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="app\View\FormRelatorioProdutividade.resx">
       <DependentUpon>FormRelatorioProdutividade.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="app\View\FormRelatorioQuantidade.resx">
-      <DependentUpon>FormRelatorioQuantidade.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="app\View\Tarefa\FormHomeTarefas.resx">
       <DependentUpon>FormHomeTarefas.vb</DependentUpon>

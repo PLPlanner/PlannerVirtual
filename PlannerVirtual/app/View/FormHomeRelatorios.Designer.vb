@@ -24,8 +24,6 @@ Partial Class FormHomeRelatorios
     Private Sub InitializeComponent()
         Me.btnMaisRealizadas = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.PanelSelecionadoQuantidade = New System.Windows.Forms.Panel()
-        Me.btnQuantidade = New System.Windows.Forms.Button()
         Me.PanelSelecionadoMaisRealizadas = New System.Windows.Forms.Panel()
         Me.PanelSelecionadoProdutividade = New System.Windows.Forms.Panel()
         Me.btnProdutividade = New System.Windows.Forms.Button()
@@ -47,14 +45,12 @@ Partial Class FormHomeRelatorios
         Me.btnMaisRealizadas.Name = "btnMaisRealizadas"
         Me.btnMaisRealizadas.Size = New System.Drawing.Size(215, 60)
         Me.btnMaisRealizadas.TabIndex = 20
-        Me.btnMaisRealizadas.Text = "Categorias Mais Realizadas"
+        Me.btnMaisRealizadas.Text = "Mais Realizadas"
         Me.btnMaisRealizadas.UseVisualStyleBackColor = False
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.White
-        Me.Panel1.Controls.Add(Me.PanelSelecionadoQuantidade)
-        Me.Panel1.Controls.Add(Me.btnQuantidade)
         Me.Panel1.Controls.Add(Me.btnMaisRealizadas)
         Me.Panel1.Controls.Add(Me.PanelSelecionadoMaisRealizadas)
         Me.Panel1.Controls.Add(Me.PanelSelecionadoProdutividade)
@@ -64,30 +60,6 @@ Partial Class FormHomeRelatorios
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(976, 65)
         Me.Panel1.TabIndex = 25
-        '
-        'PanelSelecionadoQuantidade
-        '
-        Me.PanelSelecionadoQuantidade.Location = New System.Drawing.Point(721, 60)
-        Me.PanelSelecionadoQuantidade.Name = "PanelSelecionadoQuantidade"
-        Me.PanelSelecionadoQuantidade.Size = New System.Drawing.Size(200, 5)
-        Me.PanelSelecionadoQuantidade.TabIndex = 23
-        '
-        'btnQuantidade
-        '
-        Me.btnQuantidade.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnQuantidade.BackColor = System.Drawing.Color.Transparent
-        Me.btnQuantidade.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnQuantidade.FlatAppearance.BorderSize = 0
-        Me.btnQuantidade.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnQuantidade.Font = New System.Drawing.Font("Source Code Pro", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnQuantidade.ForeColor = System.Drawing.Color.FromArgb(CType(CType(67, Byte), Integer), CType(CType(97, Byte), Integer), CType(CType(238, Byte), Integer))
-        Me.btnQuantidade.Location = New System.Drawing.Point(697, 0)
-        Me.btnQuantidade.Name = "btnQuantidade"
-        Me.btnQuantidade.Size = New System.Drawing.Size(215, 60)
-        Me.btnQuantidade.TabIndex = 23
-        Me.btnQuantidade.Text = "Quantidade"
-        Me.btnQuantidade.UseVisualStyleBackColor = False
         '
         'PanelSelecionadoMaisRealizadas
         '
@@ -146,8 +118,6 @@ Partial Class FormHomeRelatorios
 
     Friend WithEvents btnMaisRealizadas As Button
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents PanelSelecionadoQuantidade As Panel
-    Friend WithEvents btnQuantidade As Button
     Friend WithEvents PanelSelecionadoMaisRealizadas As Panel
     Friend WithEvents PanelSelecionadoProdutividade As Panel
     Friend WithEvents btnProdutividade As Button

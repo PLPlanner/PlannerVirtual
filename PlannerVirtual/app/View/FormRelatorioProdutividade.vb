@@ -141,10 +141,13 @@ Public Class FormRelatorioProdutividade
         Select Case cbIntervaloTempo.SelectedIndex
             Case IntervaloTempo.Semana
                 lblSemana.Text = dataInicio.ToString("dd/MM/yyyy") & " - " & dataFim.ToString("dd/MM/yyyy")
+                lblSemanaMesProdutivo.Text = ""
             Case IntervaloTempo.Mes
                 lblSemana.Text = dataInicio.ToString("MMMM/yyyy")
+                lblSemanaMesProdutivo.Text = "Semanas mais produtivas:"
             Case IntervaloTempo.Ano
                 lblSemana.Text = dataInicio.ToString("yyyy")
+                lblSemanaMesProdutivo.Text = "Meses mais produtivas:"
         End Select
 
 

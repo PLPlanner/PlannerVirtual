@@ -27,9 +27,11 @@
         ListViewRelatorio.Items.Clear()
         Dim categoriasMaisRealizadas As Dictionary(Of String, Integer) = CriarRelatorio(cbTipoRelatorio.SelectedIndex)
         Try
+            Dim i As Integer = 1
             For Each categoria As KeyValuePair(Of String, Integer) In categoriasMaisRealizadas
                 Console.WriteLine(categoria)
-                Dim item = New ListViewItem({categoria.Key, categoria.Value})
+                Dim item = New ListViewItem({i, categoria.Key, categoria.Value})
+                i += 1
                 item.ForeColor = CategoriaDAO.getSingletonObject().consultar(categoria.Key).cor
                 ListViewRelatorio.Items.Add(item)
             Next
@@ -37,7 +39,32 @@
             MessageBox.Show("Erro ao carregar os dados: " & ex.Message)
         End Try
 
+        Dim relatorioQuantidade() As Double = CriarRelatorioQuantidade(cbTipoRelatorio.SelectedIndex)
+        lblQuantTotal.Text = "Total: " & relatorioQuantidade(0)
+        lblQuantConcluidas.Text = "Concluidas: " & relatorioQuantidade(1)
+        lblQuantPorcentagem.Text = "Porcentagem concluidas: " & FormatNumber(relatorioQuantidade.GetValue(2).ToString, 2) + "%"
+
     End Sub
+
+    Private Function CriarRelatorioQuantidade(tipo As Integer) As Double()
+        Dim relatorio As RelatorioQuantidade = New RelatorioQuantidade(dataInicio, dataFim)
+        Select Case tipo
+            Case 0
+                Dim quantidadeTarefas As Double = CDbl(relatorio.getQuantidadeDeTarefas())
+                Dim quantidadeTarefasExecutadas As Double = CDbl(relatorio.calcularQuantidadeTarefasExecutadas())
+                Dim porcentagem As Double = CDbl(relatorio.calcularPorcentagemTarefasExecutadas * 100)
+                Dim vetorQuantidade = New Double() {quantidadeTarefas, quantidadeTarefasExecutadas, porcentagem}
+                Return vetorQuantidade
+            Case 1
+                Dim quantidadeMetas As Double = CDbl(relatorio.getQuantidadeDeMetas())
+                Dim quantidadeMetasCumpridas As Double = CDbl(relatorio.calcularQuantidadeMetasCumpridas())
+                Dim porcentagem As Double = CDbl(relatorio.calcularPorcentagemMetasCumpridas * 100)
+                Dim vetorQuantidade = New Double() {quantidadeMetas, quantidadeMetasCumpridas, porcentagem}
+                Return vetorQuantidade
+        End Select
+
+        Return Nothing
+    End Function
 
     Private Sub inicializar()
         Select Case cbIntervaloTempo.SelectedIndex
@@ -97,13 +124,11 @@
             Case IntervaloTempo.Ano
                 lblSemana.Text = dataInicio.ToString("yyyy")
         End Select
-
-        Select Case cbTipoRelatorio.SelectedIndex
-            Case 0
-                lblTipoRelatorio.Text = "Categorias mais realizadas em Tarefas"
-            Case 1
-                lblTipoRelatorio.Text = "Categorias mais realizadas em Metas"
-        End Select
+        If cbTipoRelatorio.SelectedIndex = 0 Then
+            lblTipo.Text = "Tarefas"
+        Else
+            lblTipo.Text = "Metas"
+        End If
     End Sub
 
     Private Sub cbIntervaloTempo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbIntervaloTempo.SelectedIndexChanged
@@ -114,5 +139,10 @@
         ChangeLabelText()
         PreencherListView()
     End Sub
+
+    Private Sub lblSemana_Click(sender As Object, e As EventArgs) Handles lblSemana.Click
+
+    End Sub
+
 
 End Class
