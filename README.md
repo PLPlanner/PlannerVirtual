@@ -49,8 +49,8 @@ Persistencia
   </ul>
 
 ## Imagens do sistema
-<img src="PlannerVirtual/app/Assets/tarefas.png" width="991" height="776">
-<img src="PlannerVirtual/app/Assets/metas.png"  width="991" height="776">
-<img src="PlannerVirtual/app/Assets/Lembretes.png"  width="991" height="776">
-<img src="PlannerVirtual/app/Assets/relatorios.png"  width="991" height="776">
-<img src="PlannerVirtual/app/Assets/categorias.png"  width="991" height="776">
+<img src="PlannerVirtual/app/Assets/tarefas.png" width="991" height="750">
+<img src="PlannerVirtual/app/Assets/metas.png"  width="991" height="750">
+<img src="PlannerVirtual/app/Assets/Lembretes.png"  width="991" height="750">
+<img src="PlannerVirtual/app/Assets/relatorios.png"  width="991" height="750">
+<img src="PlannerVirtual/app/Assets/categorias.png"  width="991" height="750">
